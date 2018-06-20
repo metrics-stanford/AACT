@@ -1,0 +1,25 @@
+#Note: Most of the conditional statements at the beginning are solely to restrict from returning a huge number of results
+
+
+#Returns the count of the number of studies where the enrollment is 200
+select count(*) from studies where enrollment = 200;
+ 
+ 
+#Returns the intervention name and NCT number for studies that fall under the Radiation intervention type
+select name, nct_id from interventions where intervention_type = 'Radiation'
+ 
+#Returns the NCT numbers for studies where the enrollment is 200, the study was completed after 2016-11-11 and there were more than four arms
+select NCT_ID from studies where (enrollment = 200) AND (completion_date > '2016-11-11') AND (number_of_arms > 4); 
+ 
+#Returns the NCT number, condition name(s), and intervention name(s) where the intervention is Chemotherapy, there are two arms, and the completion date was after 2016-11-11
+select studies.nct_id, conditions.name, interventions.name from studies, conditions, interventions where (studies.nct_id = conditions.nct_id) AND (studies.nct_id = interventions.nct_id) AND(interventions.name = 'Chemotherapy') AND (studies.number_of_arms = 2) AND (completion_date > '2016-11-11');
+
+
+#Returns the NCT number and condition name where the condition is HIV
+select studies.nct_id, conditions.name, conditions.id from studies, conditions
+where (studies.nct_id = conditions.nct_id) AND  (studies.number_of_arms = 4) AND (conditions.name = 'HIV');
+
+#Returns the MeSH (Medical Subject Headings) terms and the NCT number where the study has an enrollment of 200 and a start date after 2017-11-11
+select studies.nct_id, browse_conditions.mesh_term from studies, browse_conditions
+where (studies.nct_id = browse_conditions.nct_id) AND 
+(studies.enrollment = 200) AND (studies.start_date > '2017-11-11')
