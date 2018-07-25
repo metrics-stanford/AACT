@@ -6,8 +6,6 @@ This repository contains code that can be used in conjunction with pgadmin4 or a
 
 ![image](https://user-images.githubusercontent.com/40306511/43179618-b556312a-8f88-11e8-941b-16f891f970fc.png)
 
-<img width="1051" alt="aactoverview" src="https://user-images.githubusercontent.com/40306511/42787183-41d8ce5e-890e-11e8-8b43-41495700e892.png">
-
 <img width="1089" alt="aactcapabilities" src="https://user-images.githubusercontent.com/40306511/42787177-38638120-890e-11e8-9b01-cd9c51fa45b8.png">
 
 <img width="1158" alt="constructingsqlqueries" src="https://user-images.githubusercontent.com/40306511/42787179-3ba46a34-890e-11e8-80c0-c815a3f5c40b.png">
